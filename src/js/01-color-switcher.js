@@ -14,6 +14,7 @@ function buttonStartOnClick(){
     // console.log("Ready");
     buttonStop.style.opacity = "100%";
     buttonStart.style.opacity = "50%";
+    body.style.backgroundColor = `${getRandomHexColor()}`;
     const process = setInterval(() => {
         body.style.backgroundColor = `${getRandomHexColor()}`;
     }, 1000);

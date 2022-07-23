@@ -32,10 +32,12 @@ function onDatePick(selectedDates){
     const currentDate = new Date;
     if(selectedDates[0].getTime() < currentDate.getTime()){
         Notiflix.Notify.failure("Please choose a date in the future");
+        startButton.style.opacity = "50%";
         return;
     }
     startButton.style.opacity = "100%";
     startButton.addEventListener("click", () => {
+        updateTimer(selectedDates[0]);
         timerProcess = setInterval(updateTimer, 1000, selectedDates[0]);
         startButton.style.opacity = "50%";
     }, {once: true});  
